@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+:root {
+	--color-primary: #D83A43;
+	--color-secondary: #6FBBF1;
+	--color-accent: #E5E5E5;
+
+	--anchor-color: #6FBBF1;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::selection {
+	color: var(--color-accent);
+	background-color: var(--color-secondary);
+}
+
+::placeholder {
+	color: rgb(from currentColor r g b / .5);
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background: var(--color-primary);
+	color: var(--color-secondary);
+	font-family: YakuHanJPs, Roboto, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Arial, nc3Jp, sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-block: .5rem;
+	font-weight: bold;
+}
+
+h1 { font-size: calc(2em / sqrt(1)); }
+h2 { font-size: calc(2em / sqrt(2)); }
+h3 { font-size: calc(2em / sqrt(3)); }
+h4 { font-size: calc(2em / sqrt(4)); }
+h5 { font-size: calc(2em / sqrt(5)); }
+h6 { font-size: calc(2em / sqrt(6)); }
+
+a {
+	color: var(--anchor-color);
+	text-decoration: underline;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+textarea {
+	background: rgb(from var(--color-secondary) r g b / .25);
+	color: var(--color-secondary);
+
+	font-size: 12pt;
+	line-height: 1.5rem;
+
+	border-width: 0;
+	border-radius: .5rem;
+
+	width: 100%;
+	padding: .5rem;
+
+	overflow: hidden;
+	resize: none;
+}
+
+textarea:focus {
+	background: rgb(from var(--color-secondary) r g b / .5);
+	outline: none;
+}
+
+#wrapper {
+	margin: .5rem;
+}
+
+#header, #footer {
+	margin-block: 2rem;
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: .5rem;
+}
